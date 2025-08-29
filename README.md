@@ -8,7 +8,7 @@
 
 ### Math and Number Theory :brain:
 - [Combinatorics Library](Math/Combinatorics.cpp)
-- [Exponentation / Modular Multiplicative Inverse](Modular.cpp)
+- [Exponentation / Modular Multiplicative Inverse](Math/Modular.cpp)
 - [Sieve / Factorizations](Math/Sieve.cpp)
 
 

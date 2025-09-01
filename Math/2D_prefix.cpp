@@ -39,6 +39,7 @@ ostream &operator<<(ostream &out, const vector<T> &v)
 int n, m;
 vector<vector<int>> matrix;
 vector<vector<int>> prefix;
+vector<vector<int>> partial;
 void build_prefix()
 {
     prefix.assign(n + 1, vector<int>(m + 1, 0));
@@ -49,6 +50,15 @@ void build_prefix()
             prefix[i][j] = prefix[i - 1][j] + prefix[i][j - 1] - prefix[i - 1][j - 1] + matrix[i][j];
         }
     }
+}
+
+void build_partial(int x1, int y1, int x2, int y2, int x)
+{
+    partial.assign(n + 2, vector<int>(m + 2, 0));
+    partial[x1][y1] += x;
+    partial[x1][y2 + 1] -= x;
+    partial[x2 + 1][y1] -= x;
+    partial[x2 + 1][y2 + 1] += x;
 }
 
 ll Two_D_prefix(int x1, int y1, int x2, int y2)
